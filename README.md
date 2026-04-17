@@ -1,4 +1,4 @@
-# Stage 1 API Deployment
+# Personal API Deployment
 
 A minimal Node.js/Express API with three JSON endpoints.
 
