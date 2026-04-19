@@ -32,7 +32,7 @@ app.get('/me', (req, res) => {
   res.status(200).json({
     name: 'Babatofunmi Osho-Davies',
     email: 'davietosh2004@gmail.com',
-    github: 'https://github.com/solitudex12/personal-api'
+    github: 'https://github.com/solitudex12'
   });
 });
 
