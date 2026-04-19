@@ -7,22 +7,12 @@ const PORT = 3000;
 app.use(compression());
 app.disable('x-powered-by');
 
-const API_KEY = process.env.API_KEY || 'your-secret-key-here';
-
-const requireApiKey = (req, res, next) => {
-  const key = req.headers['x-api-key'];
-  if (!key || key !== API_KEY) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-  next();
-};
-
-app.use(requireApiKey);
-
+// GET /
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'API is running' });
 });
 
+// GET /health
 app.get('/health', (req, res) => {
   const totalMem = os.totalmem();
   const freeMem = os.freemem();
@@ -37,11 +27,12 @@ app.get('/health', (req, res) => {
   });
 });
 
+// GET /me — replace with YOUR real details
 app.get('/me', (req, res) => {
   res.status(200).json({
-    name: 'Your Full Name',
-    email: 'you@example.com',
-    github: 'https://github.com/yourusername/personal-api'
+    name: 'Babatofunmi Osho-Davies',
+    email: 'davietosh2004@gmail.com',
+    github: 'https://github.com/solitudex12/personal-api'
   });
 });
 
